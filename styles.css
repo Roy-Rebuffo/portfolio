@@ -1,0 +1,88 @@
+/* TODO'S CSS: MEDIA QUERIES FOR MOBILE .header-section > JUSTIFY CONTENT CENTER */
+
+/* CSS para hacer que la página sea responsive y limite el ancho del main */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+main {
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: 20px;
+    background: red;
+}
+
+.header-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header-container-left {
+    flex: 1;
+}
+.header-container-left img{
+    --s: 200px; 
+  --b: 6px; 
+  --c: #ae3ec9;
+  --cb: #e9ecef;
+  --f: 1; 
+  
+  width: var(--s);
+  aspect-ratio: 1;
+  padding-top: calc(var(--s)/5);
+  cursor: pointer;
+  border-radius: 0 0 999px 999px;
+  --_g: 50%/calc(100%/var(--f)) 100% no-repeat content-box;
+  --_o: calc((1/var(--f) - 1)*var(--s)/2 - var(--b));
+  outline: var(--b) solid var(--c);
+  outline-offset: var(--_o);
+  background: 
+    radial-gradient(
+      circle closest-side,
+      var(--cb) calc(99% - var(--b)),var(--c) calc(100% - var(--b)) 99%,#0000
+     ) var(--_g);
+  -webkit-mask:
+    linear-gradient(#000 0 0) no-repeat
+     50% calc(1px - var(--_o)) / calc(100%/var(--f) - 2*var(--b) - 2px) 50%,
+    radial-gradient(circle closest-side,#000 99%,#0000) var(--_g);
+  transform: scale(var(--f));
+  transition: .5s;
+}
+img:hover {
+    --f: 1.4; 
+  }
+
+.header-container-right {
+    flex: 1;
+    text-align: center;
+}
+
+.about-section, .projects-section {
+    margin-bottom: 40px;
+}
+
+.projects-container {
+    display: flex;
+    align-items: center;
+}
+
+.img-projects {
+    max-width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 768px) {
+    /* Ajustes para dispositivos más pequeños */
+    .header-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-container-left,
+    .header-container-right {
+        flex: auto;
+    }
+}
